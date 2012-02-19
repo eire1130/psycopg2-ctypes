@@ -201,6 +201,9 @@ class build_py(_build_py):
                 fname = os.path.join(path, 'libpq.dylib')
             if sys.platform in ['linux2', 'linux3']:
                 fname = os.path.join(path, 'libpq.so')
+        elif os.name == 'nt':
+            if sys.platform in ['win32']:
+                fname = os.path.join(path, 'libpq.dll')
 
         if fname:
             print
